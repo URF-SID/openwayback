@@ -30,7 +30,7 @@ LABEL app.name="OpenWayback" \
       app.license.url="https://github.com/iipc/openwayback/blob/master/LICENSE" \
       app.repo.url="https://github.com/iipc/openwayback" \
       app.docs.url="https://github.com/iipc/openwayback/wiki" \
-      app.dockerfile.author="Sawood Alam <@ibnesayeed>"
+      app.dockerfile.author="Emmanuel Di Pretoro <@edipretoro> (Original author: Sawood Alam <@ibnesayeed>)"
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=builder /src/dist/target/openwayback/ROOT /usr/local/tomcat/webapps/ROOT
@@ -41,6 +41,6 @@ VOLUME /data
 ENV WAYBACK_HOME=/usr/local/tomcat/webapps/ROOT/WEB-INF \
     WAYBACK_BASEDIR=/data \
     WAYBACK_URL_SCHEME=http \
-    WAYBACK_URL_HOST=localhost \
-    WAYBACK_URL_PORT=8080 \
-    WAYBACK_URL_PREFIX=http://localhost:8080
+    WAYBACK_URL_HOST=waybackpromise.urfsid.be \
+    WAYBACK_URL_PORT=80 \
+    WAYBACK_URL_PREFIX=http://waybackpromise.urfsid.be
