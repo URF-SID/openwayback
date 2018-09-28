@@ -1,0 +1,9 @@
+version: '3'
+services:
+  promisewayback:
+    image: promise/waybackpromise:latest 
+    container_name: promisewayback
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
